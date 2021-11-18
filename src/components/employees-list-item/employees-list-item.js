@@ -23,7 +23,7 @@ class EmployeesListItem extends Component {
     }
 
     render() {
-        let {name, salary} = this.props;
+        let {name, salary, onDelete} = this.props;
         let {increase} = this.state;
         let {rise} = this.state;
 
@@ -49,7 +49,8 @@ class EmployeesListItem extends Component {
                     </button>
 
                     <button type="button"
-                            className="btn-trash btn-sm ">
+                            className="btn-trash btn-sm"
+                            onClick={onDelete}>
                         <i className="fas fa-trash"></i>
                     </button>
                     <i className="fas fa-star"></i>
