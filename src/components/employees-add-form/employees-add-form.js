@@ -14,12 +14,14 @@ class EmployeesAddForm extends Component {
 
     onInputValue = (e) => {
         this.setState({
-            [e.target.name]: e.target.value,
+            [e.target.name]: e.target.value
         })
     }
 
     onSubmit = (e) => {
         e.preventDefault();
+        // Можно еще и сообщения добавлять, подсветку, атрибуты minlength и тд.
+        if (this.state.name.length < 3 || !this.state.salary) return;
         this.props.onAdd(this.state.name, this.state.salary);
         this.setState({
             name: '',
